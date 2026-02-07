@@ -13,7 +13,7 @@ import os
 import sys
 from openai import OpenAI
 from config import (DATA_PATH, INDEX_PATH, METADATA_PATH, 
-                   EMBEDDING_MODEL, CHUNK_SIZE, CHUNK_OVERLAP, OPENAI_API_KEY)
+                   EMBEDDING_MODEL, CHAT_MODEL, CHUNK_SIZE, CHUNK_OVERLAP, OPENAI_API_KEY)
 
 # Add parent dir to path to import tools
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -55,14 +55,31 @@ def ingest():
     texts = [c['text'] for c in all_chunks]
     
     # Process in batches to avoid rate limits/large payloads
-    batch_size = 100
+    batch_size = 50 # Reduced from 100 for safer limits
     embeddings = []
+    import time
+    
     for i in range(0, len(texts), batch_size):
         batch = texts[i:i+batch_size]
-        response = client.embeddings.create(input=batch, model=EMBEDDING_MODEL)
-        batch_embeddings = [record.embedding for record in response.data]
-        embeddings.extend(batch_embeddings)
+        
+        # Simple retry logic for Rate Limits
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = client.embeddings.create(input=batch, model=EMBEDDING_MODEL)
+                batch_embeddings = [record.embedding for record in response.data]
+                embeddings.extend(batch_embeddings)
+                break
+            except Exception as e:
+                if "rate_limit_exceeded" in str(e).lower() and attempt < max_retries - 1:
+                    print(f"Rate limit hit at batch {i}. Sleeping for 5s...")
+                    time.sleep(5)
+                else:
+                    raise e
+                    
         print(f"Processed {min(i+batch_size, len(texts))}/{len(texts)} chunks...")
+        time.sleep(0.5) # Short pause between batches to respect TPM
+
 
     embeddings = np.array(embeddings).astype('float32')
     

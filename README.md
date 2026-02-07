@@ -29,7 +29,7 @@ A fully private RAG running locally on your machine via Ollama.
 *   `query.py`: Uses local LLM for generation.
 
 ### 🌳 PageIndex RAG (`/pageindex-rag`)
-Advanced reasoning-based RAG using VectifyAI.
+Advanced reasoning-based RAG using [VectifyAI PageIndex](https://github.com/VectifyAI/PageIndex).
 *   `config.py`: Configuration for PageIndex environment.
 *   `ingest.py`: Builds a hierarchical tree-index from Markdown documents.
 *   `query.py`: Performs reasoning-based retrieval across the document tree.
