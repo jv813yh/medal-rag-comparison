@@ -1,3 +1,10 @@
+"""
+OpenAI RAG Ingestion Script
+---------------------------
+This script handles the process of loading medical transcriptions, chunking them 
+into token-based segments, generating embeddings using OpenAI's API, 
+and storing them in a FAISS vector index for fast retrieval.
+"""
 import pandas as pd
 import numpy as np
 import faiss
@@ -16,6 +23,13 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 def ingest():
+    """
+    Orchestrates the ingestion pipeline:
+    1. Loads and cleans raw CSV data.
+    2. Chunks transcriptions into 400-token segments.
+    3. Converts text chunks into vector embeddings via OpenAI.
+    4. Saves vectors into a FAISS index and stores text metadata in a PKL file.
+    """
     print(f"Loading data from {DATA_PATH}...")
     df = load_and_clean_data(DATA_PATH)
     df = normalize_data(df)

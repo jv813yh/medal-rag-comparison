@@ -1,5 +1,13 @@
+"""
+Local Model RAG Ingestion Script
+--------------------------------
+This script runs a fully private ingestion pipeline using Ollama. It manages 
+local embedding generation and handles errors like missing models or 
+context length overflows.
+"""
 import pandas as pd
 import numpy as np
+
 import faiss
 import pickle
 import os

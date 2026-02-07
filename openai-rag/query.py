@@ -1,3 +1,10 @@
+"""
+OpenAI RAG Query Script
+-----------------------
+This script manages the retrieval and generation loop. It searches the FAISS index 
+for relevant medical context and uses GPT-4o-mini to generate an answer based 
+only on that retrieved information.
+"""
 import faiss
 import pickle
 import numpy as np
@@ -14,6 +21,10 @@ from tools.data_processor import normalize_query
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def load_index():
+    """
+    Loads the pre-built FAISS index and the associated text metadata.
+    """
+
     if not os.path.exists(INDEX_PATH) or not os.path.exists(METADATA_PATH):
         raise FileNotFoundError("Index or Metadata not found. Run ingest.py first.")
     
@@ -23,6 +34,14 @@ def load_index():
     return index, metadata
 
 def query(question):
+    """
+    Performs the full RAG cycle for a user question:
+    1. Normalizes the question.
+    2. Embeds the question into a vector.
+    3. Finds the Top-K closest matches in FAISS.
+    4. Constructs a prompt with the context.
+    5. Returns the LLM-generated answer and the source chunks.
+    """
     # Step 1 of RAG Query Flow: Preprocessing
     question = normalize_query(question)
     print(f"Normalized Query: {question}")

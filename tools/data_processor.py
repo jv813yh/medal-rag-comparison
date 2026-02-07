@@ -26,7 +26,13 @@ def get_token_chunks(text, model="gpt-4o-mini", chunk_size=512, overlap=50):
 
 def load_and_clean_data(file_path):
     """
-    Loads the medical transcription dataset and performs basic cleaning.
+    Loads the medical transcription dataset from a CSV file and performs 
+    initial cleanup by removing null values and duplicates.
+    
+    Args:
+        file_path (str): Path to the mtsamples.csv file.
+    Returns:
+        pd.DataFrame: A cleaned pandas DataFrame.
     """
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Dataset not found at {file_path}")
@@ -47,7 +53,13 @@ def load_and_clean_data(file_path):
 
 def normalize_data(df):
     """
-    Normalizes text data.
+    Standardizes the DataFrame by converting column names to lowercase 
+    and stripping whitespace from the transcription text.
+    
+    Args:
+        df (pd.DataFrame): The DataFrame to normalize.
+    Returns:
+        pd.DataFrame: The normalized DataFrame.
     """
     # Standardize column names to lowercase
     df.columns = [col.lower() for col in df.columns]
@@ -56,6 +68,7 @@ def normalize_data(df):
     df['transcription'] = df['transcription'].str.strip()
     
     return df
+
 
 if __name__ == "__main__":
     # Test loading

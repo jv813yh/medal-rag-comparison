@@ -2,43 +2,44 @@
 
 A comprehensive benchmarking project designed to evaluate and compare three different **Retrieval-Augmented Generation (RAG)** architectures using clinical medical transcription data.
 
-## 🎯 Purpose
-The goal of this project is to provide a side-by-side comparison of modern RAG strategies applied to highly complex, specialized data (medical records). We measure **Accuracy**, **Faithfulness**, **Latency**, and **Cost** to identify which architecture best suits specific needs like privacy, speed, or reasoning capability.
+## 📊 Dataset
+The project uses the **Medical Transcriptions (MTSamples)** dataset from Kaggle.
+*   **Source**: [Medical Transcriptions on Kaggle](https://www.kaggle.com/datasets/tboyle10/medicaltranscriptions)
+*   **Content**: Over 5,000 real-world medical transcriptions covering various medical specialties.
+*   **Setup**: Download `mtsamples.csv` and place it in the `data/` directory.
 
 ---
 
-## 🏗️ The Three Architectures
+## 🏗️ Project Structure & Component Details
 
-### 1. OpenAI RAG (Cloud-Native)
-*   **Engine**: OpenAI `text-embedding-3-small` + `gpt-4o-mini`.
-*   **Vector DB**: FAISS (FlatL2).
-*   **Characteristics**: High speed, high accuracy, requires internet and API costs.
-*   **Best for**: Prototyping and high-performance applications where data sharing is permitted.
+### 🛠️ Global Tools (`/tools`)
+*   `data_processor.py`: The heart of data handling. Contains functions for cleaning the CSV, normalizing medical text, and performing token-based chunking.
+*   `export_to_markdown.py`: Converts CSV rows into individual `.md` files. This is crucial for the PageIndex RAG, which processes documents rather than raw table rows.
 
-### 2. Local Model RAG (Privacy-First)
-*   **Engine**: Ollama - `mxbai-embed-large` + `Llama 3.2`.
-*   **Vector DB**: FAISS (FlatL2).
-*   **Characteristics**: Zero cost, 100% private, performance depends on local hardware.
-*   **Best for**: Sensitive medical data where privacy is non-negotiable.
+### ☁️ OpenAI RAG (`/openai-rag`)
+A high-performance implementation using the official OpenAI API.
+*   `config.py`: Centralized settings for API keys, model names (`gpt-4o-mini`), and FAISS parameters.
+*   `ingest.py`: Loads data, generates embeddings via OpenAI API, and saves them into a FAISS index.
+*   `query.py`: Handles the RAG loop: Query -> Embedding -> FAISS Search -> Prompt Augmentation -> LLM Answer.
 
-### 3. PageIndex RAG (Reasoning-Based)
-*   **Engine**: VectifyAI PageIndex.
-*   **Search Type**: Structure-aware tree navigation (Vectorless).
-*   **Characteristics**: Decouples search from embeddings, focuses on navigating document hierarchy.
-*   **Best for**: Complex documents where traditional vector search loses context.
+### 🏠 Local Model RAG (`/local-model-rag`)
+A fully private RAG running locally on your machine via Ollama.
+*   `config.py`: Local settings for `Llama 3.2` and `mxbai-embed-large`.
+*   `ingest.py`: Multi-threaded embedding generation (local) and FAISS indexing. It includes a "self-healing" feature to auto-pull missing models.
+*   `query.py`: Uses local LLM for generation.
 
----
+### 🌳 PageIndex RAG (`/pageindex-rag`)
+Advanced reasoning-based RAG using VectifyAI.
+*   `config.py`: Configuration for PageIndex environment.
+*   `ingest.py`: Builds a hierarchical tree-index from Markdown documents.
+*   `query.py`: Performs reasoning-based retrieval across the document tree.
 
-## 🛠️ Project Structure
-```text
-├── data/               # Source MTSamples dataset
-├── openai-rag/        # OpenAI pipeline implementation
-├── local-model-rag/   # Ollama/Local pipeline implementation
-├── pageindex-rag/     # PageIndex tree-based implementation
-├── evaluation/        # Comparison suite and scoring metrics
-├── tools/             # Data cleaning and Markdown export utilities
-└── workflows/         # Core logic and strategy definitions
-```
+### � Evaluation Suite (`/evaluation`)
+The benchmarking department.
+*   `queries.json`: A standard set of 5 medical-domain questions to ensure a fair test.
+*   `metrics.py`: Implements "LLM-as-a-judge" logic to score Relevance, Faithfulness, and Retrieval Precision.
+*   `compare.py`: The orchestrator script that runs all three systems and generates a final comparison report.
+
 
 ---
 

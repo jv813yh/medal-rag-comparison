@@ -1,4 +1,12 @@
+"""
+Local Model RAG Query Script
+----------------------------
+This script performs offline medical RAG. It uses Ollama's local embedding 
+and chat APIs to ensure that no medical transcription data ever leaves the 
+local machine.
+"""
 import faiss
+
 import pickle
 import numpy as np
 import os
