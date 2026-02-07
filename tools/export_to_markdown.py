@@ -6,7 +6,8 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from tools.data_processor import load_and_clean_data, normalize_data
 
-def export_to_markdown(limit=50):
+def export_to_markdown(limit=500):
+
     print("STARTING EXPORT...")
     data_path = os.path.join("data", "mtsamples.csv")
     output_dir = os.path.join("pageindex-rag", "docs")

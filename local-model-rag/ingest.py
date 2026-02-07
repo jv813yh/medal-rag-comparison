@@ -41,10 +41,11 @@ def ingest():
     # Ensure models are available before starting
     ensure_model_available(EMBED_MODEL)
     
-    # Using a smaller subset for local processing stability - recommended for testing
-    if len(df) > 100:
-        print("Note: Dataset is large. Limiting to 100 samples for local testing. Edit ingest.py to change.")
-        df = df.head(100)
+    # Limit to 500 for standardized comparison
+    if len(df) > 500:
+        print("Limiting to 500 samples for standardized comparison.")
+        df = df.head(500)
+
 
     
     all_chunks = []

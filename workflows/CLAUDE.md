@@ -2,7 +2,7 @@
 
 ## Purpose of This Repository
 
-This repository (**medal-rag-comparison**) exists to **design, implement, evaluate, and continuously improve** multiple Retrieval-Augmented Generation (RAG) systems over the *same medical dataset*, using different architectural approaches.
+This repository (**medical-rag-comparison**) exists to **design, implement, evaluate, and continuously improve** multiple Retrieval-Augmented Generation (RAG) systems over the *same medical dataset*, using different architectural approaches.
 
 The goal is not just to build RAG pipelines, but to **compare them rigorously**, learn from failures, and evolve workflows over time.
 
@@ -41,7 +41,7 @@ Then:
 ## Directory Layout (Canonical)
 
 ```
-medal-rag-comparison/
+medical-rag-comparison/
 ├── README.md
 ├── data/
 │   └── README.md              # Instructions for downloading Kaggle dataset

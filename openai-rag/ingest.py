@@ -34,8 +34,9 @@ def ingest():
     df = load_and_clean_data(DATA_PATH)
     df = normalize_data(df)
     
-    # For speed in testing, we use a subset
-    # df = df.head(100) 
+    # Limit to 500 for standardized comparison
+    print("Limiting to 500 samples for standardized comparison.")
+    df = df.head(500)
     
     all_chunks = []
     print("Chunking transcriptions (tokens)...")
