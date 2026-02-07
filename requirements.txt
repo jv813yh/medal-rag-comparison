@@ -1,0 +1,10 @@
+# Core RAG Requirements (Minimal)
+python-dotenv
+pandas
+numpy
+faiss-cpu
+openai
+ollama
+tiktoken
+pytest
+

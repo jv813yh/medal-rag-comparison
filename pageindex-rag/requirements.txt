@@ -1,0 +1,6 @@
+# PageIndex RAG Requirements
+# Base dependencies
+python-dotenv
+pandas
+numpy
+# Note: PageIndex specific dependencies should be added after reviewing its docs

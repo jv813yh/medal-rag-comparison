@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "query": "What are the common symptoms described in patients presenting with allergies?",
+        "expected_topics": [
+            "rhinitis",
+            "nasal sprays",
+            "allergy",
+            "asthma"
+        ]
+    },
+    {
+        "id": 2,
+        "query": "What are the risks and complications associated with laparoscopic gastric bypass surgery?",
+        "expected_topics": [
+            "bleeding",
+            "infection",
+            "pulmonary embolism",
+            "leakage",
+            "bowel obstruction"
+        ]
+    },
+    {
+        "id": 3,
+        "query": "Describe the findings of a 2-D echocardiogram for a patient with normal LV systolic function.",
+        "expected_topics": [
+            "ejection fraction",
+            "left atrial enlargement",
+            "valves",
+            "pericardial effusion"
+        ]
+    },
+    {
+        "id": 4,
+        "query": "What is the procedure for an elective bilateral vasectomy?",
+        "expected_topics": [
+            "vas deferens",
+            "cauterized",
+            "scrotum",
+            "local anesthesia"
+        ]
+    },
+    {
+        "id": 5,
+        "query": "What symptoms did the 17-year-old female with a fishbone in her throat present with?",
+        "expected_topics": [
+            "airway compromise",
+            "foreign body",
+            "intubated"
+        ]
+    }
+]
