@@ -1,11 +1,15 @@
 import os
 import sys
+
+# Add the current directory to sys.path to find the local 'pageindex' shim
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from config import DOCS_DIR, INDEX_PATH
 
 try:
     from pageindex import PageIndex
-except ImportError:
-    print("PageIndex library not found. Install it via: pip install pageindex")
+except ImportError as e:
+    print(f"Error importing PageIndex: {e}")
     sys.exit(1)
 
 def ingest():

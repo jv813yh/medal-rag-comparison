@@ -83,6 +83,12 @@ def import_query_func(folder_name):
     module = importlib.util.module_from_spec(spec)
     # Add the folder to sys.path so the module can find its own config.py
     sys.path.insert(0, os.path.join(root_dir, folder_name))
+    
+    # CRITICAL FIX: Unload 'config' module if it was loaded by a previous RAG system
+    # This prevents pageindex-rag from seeing openai-rag's config.py
+    if 'config' in sys.modules:
+        del sys.modules['config']
+        
     spec.loader.exec_module(module)
     sys.path.pop(0)
     return module.query

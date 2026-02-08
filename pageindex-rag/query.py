@@ -2,14 +2,17 @@ import os
 import sys
 from config import INDEX_PATH, MODEL
 
+# Add the current directory to sys.path to find the local 'pageindex' shim
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 # Add parent dir to path to import tools
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from tools.data_processor import normalize_query
 
 try:
     from pageindex import PageIndex
-except ImportError:
-    print("PageIndex library not found. Install it via: pip install pageindex")
+except ImportError as e:
+    print(f"Error importing PageIndex: {e}")
     sys.exit(1)
 
 def query(question):
@@ -17,7 +20,6 @@ def query(question):
     question = normalize_query(question)
     print(f"Normalized Query: {question}")
 
-    
     if not os.path.exists(INDEX_PATH):
         raise FileNotFoundError(f"Index not found at {INDEX_PATH}. Run ingest.py first.")
 
@@ -26,11 +28,11 @@ def query(question):
     
     # Perform reasoning-based query
     # PageIndex navigates the tree structure to find the answer
-    answer = pi.query(question, model=MODEL)
+    answer, chunks = pi.query(question, model=MODEL)
     
     print("\nPageIndex Answer:")
     print(answer)
-    return answer, []
+    return answer, chunks
 
 
 if __name__ == "__main__":

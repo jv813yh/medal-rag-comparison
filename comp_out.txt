@@ -1,0 +1,234 @@
+
+--- Evaluating OpenAI ---
+Querying [1]: What are the common symptoms described in patients presenting with allergies?
+Normalized Query: what are the common symptoms described in patients presenting with allergies?
+
+Answer:
+Common symptoms described in patients presenting with allergies include nasal congestion, clear nasal drainage, sneezing, itchy or watery eyes, and throat irritation. In some cases, patients may also experience skin reactions or exacerbate existing conditions like asthma.
+Querying [2]: What are the risks and complications associated with laparoscopic gastric bypass surgery?
+Normalized Query: what are the risks and complications associated with laparoscopic gastric bypass surgery?
+
+Answer:
+The risks and complications associated with laparoscopic gastric bypass surgery include bleeding, infection, deep venous thrombosis, pulmonary embolism, leakage from the gastrojejuno-anastomosis or jejunojejuno-anastomosis, and possible bowel obstruction, among other potential complications.
+Querying [3]: Describe the findings of a 2-D echocardiogram for a patient with normal LV systolic function.
+Normalized Query: describe the findings of a 2d echocardiogram for a patient with normal lv systolic function
+
+Answer:
+The 2D echocardiogram findings for a patient with normal left ventricular (LV) systolic function include:
+
+1. Normal size of cardiac chambers, specifically the left ventricle and right ventricle.
+2. Normal LV systolic function with an ejection fraction typically estimated around 50% to 70%.
+3. Normal left ventricular diastolic function.
+4. No significant chamber enlargement or hypertrophy.
+5. Normal morphology and good motion of cardiac valves (aortic, mitral, tricuspid, and pulmonary).
+6. No pericardial effusion or intracardiac masses.
+7. Mild or trace regurgitation noted in mitral and tricuspid valves, with normal pulmonary and systemic venous flow patterns.
+
+Overall, the findings indicate a well-functioning heart without major structural or functional abnormalities.
+Querying [4]: What is the procedure for an elective bilateral vasectomy?
+Normalized Query: what is the procedure for an elective bilateral vasectomy?
+
+Answer:
+The procedure for an elective bilateral vasectomy involves the following steps:
+
+1. **Preparation**: The patient is placed in a supine position on the operating table. The scrotal area is shaved and prepped with a Betadine scrub to ensure a sterile environment.
+
+2. **Anesthesia**: Local anesthesia is administered, typically using 2% Xylocaine or 0.25% Marcaine without epinephrine, to numb the scrotal skin.
+
+3. **Incision and Exposure**: A small incision is made in the hemiscrotum (right side first, then left). The vas deferens is identified and grasped.
+
+4. **Isolation and Removal**: A segment of the vas deferens (about 1–3 cm) is isolated, clipped proximally and distally, and then removed. The cut ends may be fulgurated (cauterized) to prevent any sperm passage.
+
+5. **Closure**: Meticulous hemostasis is maintained, and the scrotal skin is closed with sutures (such as 4-0 chromic). 
+
+6. **Post-Procedure Care**: The patient may be instructed to wear a jockstrap and apply a sterile dressing. They are also advised to use alternative contraception until confirming azoospermia with semen analyses.
+
+Overall, the procedure usually results in minimal blood loss and no significant complications.
+Querying [5]: What symptoms did the 17-year-old female with a fishbone in her throat present with?
+Normalized Query: what symptoms did the 17yearold female with a fishbone in her throat present with?
+
+Answer:
+The 17-year-old female presented with airway compromise and was subsequently intubated due to the presence of a fishbone in her throat.
+
+--- Evaluating Local ---
+Querying [1]: What are the common symptoms described in patients presenting with allergies?
+Normalized Query: what are the common symptoms described in patients presenting with allergies?
+
+Local Model Answer:
+Based on the provided context, common symptoms of allergic rhinitis mentioned for this patient include:
+
+* Nasal mucosa being erythematous and swollen
+* Clear drainage from the nose
+* Mild throat erythema without exudate
+* Allergic rhinitis as a diagnosis
+Querying [2]: What are the risks and complications associated with laparoscopic gastric bypass surgery?
+Normalized Query: what are the risks and complications associated with laparoscopic gastric bypass surgery?
+
+Local Model Answer:
+According to the medical transcription, the risks and potential complications of laparoscopic Roux-en-Y gastric bypass include:
+
+* Bleeding
+* Infection
+* Deep venous thrombosis
+* Pulmonary embolism
+* Leakage from the gastrojejuno-anastomosis
+* Jejunojejuno-anastomosis
+* Possible bowel obstruction
+
+Additionally, there are also potential complications related to the use of endoscopic gastric emptying aids (EEA), such as:
+
+* EEA anastamosis
+* Injury to the small intestine
+* Stomach
+* Liver
+
+It's worth noting that these risks and complications were explained in detail to the patient prior to the procedure, and they understand them.
+Querying [3]: Describe the findings of a 2-D echocardiogram for a patient with normal LV systolic function.
+Normalized Query: describe the findings of a 2d echocardiogram for a patient with normal lv systolic function
+
+Local Model Answer:
+Based on the provided context, I can summarize the findings of a 2D echocardiogram for a patient with normal LV systolic function as follows:
+
+* The left ventricular cavity size and wall thickness appear normal.
+* The estimated ejection fraction is around 60% to 75%.
+* Normal LV systolic function with no significant chamber enlargement or hypertrophy.
+* Normal diastolic function.
+* No pericardial effusion, intracardiac masses, or significant regurgitation (except for mild mitral and tricuspid regurgitation).
+* The aortic valve is seen with good motion and the pulmonary valve appears normal.
+* There are no significant abnormalities in the tricuspid or mitral valves.
+
+Overall, the 2D echocardiogram suggests that the patient has relatively preserved cardiac function and anatomy, with only mild signs of regurgitation.
+Querying [4]: What is the procedure for an elective bilateral vasectomy?
+Normalized Query: what is the procedure for an elective bilateral vasectomy?
+
+Local Model Answer:
+According to the provided context, the procedure for an elective bilateral vasectomy involves the following steps:
+
+1. Grasping and bringing up of the right vas deferens in the scrotum.
+2. Infiltrating the skin with 2% Xylocaine and puncturing with a sharp hemostat to identify the vas beneath.
+3. Bringing out of the incision carefully and isolating a 2-inch segment.
+4. Removing a 1-inch segment from the end of the vas.
+5. Cauterizing the free ends and tying them with 2-0 silk sutures in such a fashion that the ends double back on themselves.
+
+Similar steps are repeated for the left side, but with some differences in the details:
+
+1. Grasping and bringing up of the left vas deferens in the scrotum.
+2. Infiltrating the skin with 2% Xylocaine and puncturing with a sharp hemostat to identify the vas beneath.
+3. Bringing out of the incision carefully and isolating a segment.
+4. Removing a segment from the end of the vas.
+5. Cauterizing the free ends and tying them with 4-0 chromic suture.
+
+The procedure is typically performed under local anesthesia with conscious sedation, and it does not involve any major complications or blood loss.
+Querying [5]: What symptoms did the 17-year-old female with a fishbone in her throat present with?
+Normalized Query: what symptoms did the 17yearold female with a fishbone in her throat present with?
+
+Local Model Answer:
+According to the context provided, the 17-year-old female patient presented with airway compromise and a "fishbone" (likely referring to a foreign object or an instrument) in her throat. The specific symptoms mentioned are:
+
+* Airway compromise
+* Foreign body in her throat (referred to as a "fishbone")
+* Symptoms not explicitly stated, but it is mentioned that she was intubated after the removal of the fishbone and observed for airway improvement before being extubated.
+
+Please note that the specific symptoms presented by the patient are not detailed beyond the initial airway compromise and foreign body in her throat.
+
+--- Evaluating PageIndex ---
+Querying [1]: What are the common symptoms described in patients presenting with allergies?
+Normalized Query: what are the common symptoms described in patients presenting with allergies?
+Loading index from c:\Users\KE01140\Desktop\PRACA\AI\AntiGravity\Projects\medical-rag-comparison\pageindex-rag\page_index_store...
+Querying PageIndex with: what are the common symptoms described in patients presenting with allergies?
+
+PageIndex Answer:
+Patients presenting with allergies, particularly allergic rhinitis, commonly experience symptoms such as sneezing, nasal congestion, runny nose, and itchy or watery eyes. They may also report an itchy nose or throat. In some cases, patients might have erythematous (red and inflamed) nasal passages. Those with asthma may experience wheezing, shortness of breath, and chest tightness. These symptoms are often triggered by exposure to allergens such as pollen, dust mites, pet dander, or mold.
+Querying [2]: What are the risks and complications associated with laparoscopic gastric bypass surgery?
+Normalized Query: what are the risks and complications associated with laparoscopic gastric bypass surgery?
+Loading index from c:\Users\KE01140\Desktop\PRACA\AI\AntiGravity\Projects\medical-rag-comparison\pageindex-rag\page_index_store...
+Querying PageIndex with: what are the risks and complications associated with laparoscopic gastric bypass surgery?
+
+PageIndex Answer:
+The context provided is focused on allergy and immunology, specifically related to conditions like allergic rhinitis and asthma, and does not directly relate to laparoscopic gastric bypass surgery. However, I can provide general information on the risks and complications associated with laparoscopic gastric bypass surgery, which is a procedure typically related to bariatric surgery rather than allergy/immunology.
+
+Laparoscopic gastric bypass surgery, also known as Roux-en-Y gastric bypass, is a weight-loss surgery that involves creating a small pouch from the stomach and connecting it directly to the small intestine. While it is generally considered safe, like any surgical procedure, it carries certain risks and potential complications, including:
+
+1. **Infection**: As with any surgery, there is a risk of infection at the incision sites or internally.
+
+2. **Bleeding**: There can be bleeding during or after the surgery.
+
+3. **Blood Clots**: Patients are at risk for developing blood clots, particularly in the legs (deep vein thrombosis) or lungs (pulmonary embolism).
+
+4. **Anastomotic Leaks**: This occurs when the new connections made between the stomach and small intestine leak digestive juices and partially digested food into the abdominal cavity.
+
+5. **Nutritional Deficiencies**: Due to the altered digestive process, patients may experience deficiencies in vitamins and minerals, such as vitamin B12, iron, calcium, and folate.
+
+6. **Dumping Syndrome**: This condition can occur when food moves too quickly from the stomach to the small intestine, causing symptoms like nausea, vomiting, diarrhea, and dizziness.
+
+7. **Bowel Obstruction**: Scar tissue or internal hernias can lead to blockages in the intestines.
+
+8. **Ulcers**: There is a risk of developing ulcers in the stomach or small intestine.
+
+9. **Gallstones**: Rapid weight loss can increase the risk of gallstones.
+
+10. **Psychological Effects**: Some patients may experience changes in mood or behavior, including depression or anxiety, after surgery.
+
+It is important for patients considering this surgery to discuss these risks and potential complications with their healthcare provider to make an informed decision.
+Querying [3]: Describe the findings of a 2-D echocardiogram for a patient with normal LV systolic function.
+Normalized Query: describe the findings of a 2d echocardiogram for a patient with normal lv systolic function
+Loading index from c:\Users\KE01140\Desktop\PRACA\AI\AntiGravity\Projects\medical-rag-comparison\pageindex-rag\page_index_store...
+Querying PageIndex with: describe the findings of a 2d echocardiogram for a patient with normal lv systolic function
+
+PageIndex Answer:
+The context provided is focused on allergy and immunology, specifically related to conditions like allergic rhinitis and asthma, and does not directly relate to echocardiography or cardiac function. However, I can provide a general description of findings from a 2D echocardiogram for a patient with normal left ventricular (LV) systolic function:
+
+A 2D echocardiogram for a patient with normal LV systolic function would typically show the following findings:
+
+1. **Normal Left Ventricular Size and Wall Thickness**: The dimensions of the left ventricle are within normal limits, and the walls are not thickened.
+
+2. **Normal Ejection Fraction**: The ejection fraction, which measures the percentage of blood the left ventricle pumps out with each contraction, is typically between 55% and 70%.
+
+3. **Normal Wall Motion**: The movement of the left ventricular walls is normal, with no areas of hypokinesis (reduced movement), akinesis (no movement), or dyskinesis (abnormal movement).
+
+4. **Normal Heart Valves**: The heart valves open and close properly, with no significant regurgitation (backward flow) or stenosis (narrowing).
+
+5. **Normal Chamber Sizes**: The sizes of the other heart chambers, including the right ventricle, left atrium, and right atrium, are within normal limits.
+
+6. **No Pericardial Effusion**: There is no abnormal fluid accumulation around the heart.
+
+These findings indicate that the heart is functioning well, with efficient pumping action and no structural abnormalities.
+Querying [4]: What is the procedure for an elective bilateral vasectomy?
+Normalized Query: what is the procedure for an elective bilateral vasectomy?
+Loading index from c:\Users\KE01140\Desktop\PRACA\AI\AntiGravity\Projects\medical-rag-comparison\pageindex-rag\page_index_store...
+Querying PageIndex with: what is the procedure for an elective bilateral vasectomy?
+
+PageIndex Answer:
+The context provided is focused on allergy and immunology, specifically related to conditions like allergic rhinitis and asthma, and does not relate to the procedure for an elective bilateral vasectomy. A vasectomy is a surgical procedure for male sterilization or permanent contraception. It involves cutting and sealing the vas deferens to prevent sperm from entering the urethra and thereby prevent fertilization. If you need information on vasectomy, it would be best to consult a urologist or a healthcare provider specializing in male reproductive health.
+Querying [5]: What symptoms did the 17-year-old female with a fishbone in her throat present with?
+Normalized Query: what symptoms did the 17yearold female with a fishbone in her throat present with?
+Loading index from c:\Users\KE01140\Desktop\PRACA\AI\AntiGravity\Projects\medical-rag-comparison\pageindex-rag\page_index_store...
+Querying PageIndex with: what symptoms did the 17yearold female with a fishbone in her throat present with?
+
+PageIndex Answer:
+The context provided does not include specific information about the symptoms of a 17-year-old female with a fishbone in her throat. The context is focused on allergy and immunology topics, such as allergic rhinitis, allergies, asthma, and nasal sprays, and does not mention any case involving a fishbone. Therefore, I cannot provide an answer based on the given context.
+
+--- COMPARISON SUMMARY ---
+{
+    "OpenAI": {
+        "avg_relevance": 9.2,
+        "avg_faithfulness": 9.0,
+        "avg_latency": 1.9460553646087646,
+        "avg_precision": 0.5900000000000001,
+        "total_cost": 0.001725
+    },
+    "Local": {
+        "avg_relevance": 8.8,
+        "avg_faithfulness": 8.6,
+        "avg_latency": 292.881694984436,
+        "avg_precision": 0.36,
+        "total_cost": 0.0
+    },
+    "PageIndex": {
+        "avg_relevance": 3.8,
+        "avg_faithfulness": 6.2,
+        "avg_latency": 7.298180818557739,
+        "avg_precision": 0.2,
+        "total_cost": 0.0
+    }
+}
